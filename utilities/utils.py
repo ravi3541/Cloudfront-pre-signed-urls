@@ -25,7 +25,11 @@ def rsa_signer(message):
     """
     method for signing url with private key.
     """
-    with open('/home/mindbowser/GOALS/Apr-Jun-2023/AWS/aws_demo/private_key.pem', 'rb') as key_file:
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    print(BASE_DIR)
+
+    private_key_path = os.path.join(BASE_DIR, os.getenv("PRIVATE_KEY_PATH"))
+    with open(private_key_path, 'rb') as key_file:
         private_key = serialization.load_pem_private_key(
             key_file.read(),
             password=None,

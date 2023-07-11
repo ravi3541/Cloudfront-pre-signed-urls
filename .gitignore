@@ -160,4 +160,4 @@ cython_debug/
 #.idea/
 
 
-private_key.pem
+templates/keys/private_key.pem

@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'storages',
 
-    'files'
+    'files',
+    "templates"
 ]
 
 MIDDLEWARE = [

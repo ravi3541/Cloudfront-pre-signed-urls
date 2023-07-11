@@ -82,7 +82,7 @@ class GetPresignedGetUrl(RetrieveAPIView):
             file = self.get_queryset()
             resource = os.getenv("CLOUDFRONT_URL")+str(file.file_key)
 
-            data = generate_signed_url(resource, 300)
+            data = generate_signed_url(resource, 120)
 
             self.response["error"] = None
             self.response["data"] = data
