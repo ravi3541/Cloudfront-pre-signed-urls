@@ -6,7 +6,7 @@ from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives.asymmetric import padding
-
+from aws_demo.settings import BASE_DIR
 
 class ResponseInfo(object):
     """
@@ -25,9 +25,6 @@ def rsa_signer(message):
     """
     method for signing url with private key.
     """
-    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    print(BASE_DIR)
-
     private_key_path = os.path.join(BASE_DIR, os.getenv("PRIVATE_KEY_PATH"))
     with open(private_key_path, 'rb') as key_file:
         private_key = serialization.load_pem_private_key(

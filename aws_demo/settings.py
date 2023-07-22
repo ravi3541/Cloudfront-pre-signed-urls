@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'storages',
 
     'files',
-    "templates"
 ]
 
 MIDDLEWARE = [
